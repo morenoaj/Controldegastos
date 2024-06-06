@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Financiero Personal - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-center">
+        <div class="form-container">
+            <h1 class="app-title">Control Financiero Personal</h1>
+            <div class="box">
+                <!-- Sección de inicio de sesión -->
+                <div class="box-login" id="login">
+                    <div class="top-header">
+                        <h3>¡Hola de nuevo!</h3>                    
+                        <small>Nos alegramos de tenerte de vuelta.</small>
+                    </div>
+                    <div class="input-group">
+                        <form id="form">
+                            <!-- Mensaje de éxito o error -->
+                            <div id="message" class="message"></div>
+                            <div class="input-field">
+                                <input type="text" class="input-box" name="username" required />
+                                <label for="username">Nombre de Usuario</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" class="input-box" name="password" required />
+                                <label for="password">Contraseña</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="submit" class="input-submit" value="Ingresar" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Sección de registro -->
+                <div class="box-register" id="register">
+                    <div class="top-header">
+                        <h3>Inscríbase, ¡ahora!</h3>
+                        <small>Nos alegramos de tenerle con nosotros.</small>
+                    </div>
+                    <div class="input-group">
+                        <form id="form-register">
+                            <!-- Mensaje de éxito o error -->
+                            <div id="message-register" class="message"></div>
+                            <div class="input-field">
+                                <input type="text" class="input-box" name="username" required />
+                                <label for="username">Usuario</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" class="input-box" name="name" required />
+                                <label for="name">Nombre</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" class="input-box" name="lastname" required />
+                                <label for="lastname">Apellido</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" class="input-box" name="password" required />
+                                <label for="password">Contraseña</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="submit" class="input-submit" value="Registrar" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Botones para alternar entre inicio de sesión y registro -->
+                <div class="switch">
+                    <a href="#" class="login active" onclick="login()">Inicia sesión</a>
+                    <a href="#" class="register" onclick="register()">Registrar</a>
+                    <div class="btn-active" id="btn"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script>
+        var x = document.getElementById('login');
+        var y = document.getElementById('register');
+        var z = document.getElementById('btn');
+
+        function login() {
+            x.style.left = "27px";
+            y.style.right = "-350px";
+            z.style.left = "0px";
+        }
+
+        function register() {
+            x.style.left = "-350px";
+            y.style.right = "25px";
+            z.style.left = "150px";
+        }
+    </script>
+    <script src="js/session.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

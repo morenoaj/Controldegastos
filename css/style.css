@@ -1,0 +1,559 @@
+/* Importar la fuente Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilo del cuerpo */
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: url("../assets/images/fondo.jpg") center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Título de la aplicación */
+.app-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+  margin-right: 20px;
+}
+
+/* Contenedor centrado */
+.container-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Contenedor del título */
+.container-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Caja de login y registro */
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 60px 20px 30px 20px;
+  height: 620px;
+  width: 350px;
+  border-radius: 30px;
+  background-color: rgba(255, 220, 220, 0.406);
+  backdrop-filter: blur(15px);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+/* Caja de login */
+.box-login {
+  position: absolute;
+  width: 85%;
+  left: 27px;
+  transition: 0.5s ease-in-out;
+}
+
+/* Caja de registro */
+.box-register {
+  position: absolute;
+  width: 85%;
+  right: -350px;
+  transition: 0.5s ease-in-out;
+}
+
+/* Encabezado superior */
+.top-header {
+  text-align: center;
+  margin: 30px 0;
+}
+
+/* Título del encabezado */
+.top-header h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Grupo de entrada */
+.input-group {
+  width: 100%;
+}
+
+/* Campo de entrada */
+.input-field {
+  margin: 12px 0;
+  position: relative;
+}
+
+/* Caja de entrada */
+.input-box {
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+  color: #040404;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 45px 0 20px;
+  background: rgba(224, 223, 223, 0.6);
+  backdrop-filter: blur(2px);
+  outline: none;
+}
+
+/* Etiqueta del campo de entrada */
+.input-field label {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  font-size: 15px;
+  transition: 0.3s ease-in-out;
+}
+
+/* Estilo cuando el campo está enfocado o tiene valor */
+.input-box:focus ~ label,
+.input-box:valid ~ label {
+  top: 2px;
+  font-size: 10px;
+  color: #c12828;
+  font-weight: 500;
+}
+
+/* Botón de envío */
+.input-submit {
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  background: #1ebc02;
+  color: #fff;
+  box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.144);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+/* Estilo del botón de envío al pasar el cursor */
+.input-submit:hover {
+  background: #168f01;
+  box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.32);
+}
+
+/* Switch entre login y registro */
+.switch {
+  display: flex;
+  position: absolute;
+  bottom: 30px;
+  left: 25px;
+  width: 85%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Enlaces del switch */
+.switch a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  width: 50%;
+  height: 50px;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+/* Botón activo del switch */
+#btn {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 145px;
+  height: 50px;
+  background: #cccccd;
+  border-radius: 10px;
+  box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.5s ease-in-out;
+}
+
+/* =============== Navigation ================ */
+/* Barra de navegación */
+.navigation {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  background: rgba(79, 38, 38, 0.16);
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Lista de navegación */
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+/* Elementos de la lista de navegación */
+.navigation ul li {
+  width: 100%;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  margin-bottom: 20px;
+}
+
+/* Estilo al pasar el cursor sobre los elementos de la lista */
+.navigation ul li:hover,
+.navigation ul li.hovered {
+  background-color: #fff;
+}
+
+/* Enlaces de la navegación */
+.navigation ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+/* Estilo de los enlaces al pasar el cursor */
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+  color: #2a2185;
+}
+
+/* Iconos de la navegación */
+.navigation ul li a .icon {
+  margin-right: 15px;
+  font-size: 1.5rem;
+}
+
+/* Títulos de la navegación */
+.navigation ul li a .title {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* ========================= Main ==================== */
+/* Contenedor principal */
+.main {
+  margin-left: 250px;
+  padding: 20px;
+  width: calc(100% - 250px);
+  transition: 0.5s;
+}
+
+/* Barra superior */
+.main .topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+/* Botón de alternancia de la barra superior */
+.main .topbar .toggle {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Usuario en la barra superior */
+.main .topbar .user {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Imagen del usuario */
+.main .topbar .user img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilo de las tarjetas */
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Encabezado de la tarjeta */
+.card-header {
+  margin-bottom: 20px;
+}
+
+/* Título del encabezado de la tarjeta */
+.card-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+  margin-bottom: 20px;
+}
+
+/* Grupo de formulario */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Etiqueta del formulario */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Entradas del formulario */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Botón */
+button {
+  background: #1ebc02;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Estilo del botón al pasar el cursor */
+button:hover {
+  background: #168f01;
+}
+
+/* ================== Estilos para la gráfica =================== */
+/* Estilos para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+/* Totales en la tabla */
+.totals {
+  font-weight: bold;
+  text-align: right;
+}
+
+/* Estilos para la gráfica de barras */
+.bar-chart-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de la gráfica de barras */
+.bar-chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px; /* Altura fija para el contenedor de la gráfica */
+  margin-top: 20px;
+}
+
+/* Barra de la gráfica */
+.bar {
+  width: 40%;
+  background-color: #36a2eb;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 5px;
+  transition: height 0.3s ease;
+  position: relative;
+}
+
+/* Etiqueta de la barra */
+.bar-label {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* Barra de gastos */
+.bar.expense {
+  background-color: #ff6384;
+}
+
+/* Leyenda de la gráfica */
+.chart-legend {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+/* Elemento de la leyenda */
+.legend-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Color de la leyenda */
+.legend-color {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* Color de la leyenda de ingresos */
+.legend-color.income {
+  background-color: #36a2eb;
+}
+
+/* Color de la leyenda de gastos */
+.legend-color.expense {
+  background-color: #ff6384;
+}
+
+/* Estilo para el botón de agregar */
+button[type="submit"] {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #1ebc02;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Estilo del botón de agregar al pasar el cursor */
+button[type="submit"]:hover {
+  background: #168f01;
+}
+
+/* Margen superior para el contenedor de la gráfica */
+#chart-container {
+  margin-top: 20px; /* Ajusta el valor según el espacio que necesites */
+}
+
+/* ================== Estilos para los mensajes =================== */
+/* Estilo de los mensajes */
+.message {
+  display: none;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+/* Mensaje informativo */
+.message.info {
+  display: block;
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+/* Mensaje de éxito */
+.message.success {
+  display: block;
+  background-color: #d4edda;
+  color: #155724;
+}
+
+/* Mensaje de error */
+.message.error {
+  display: block;
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+  .navigation {
+    width: 80px;
+  }
+
+  .navigation ul li a .title {
+    display: none;
+  }
+
+  .main {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+  }
+}
+
+@media (max-width: 480px) {
+  .main .topbar .toggle {
+    display: block;
+  }
+
+  .navigation {
+    left: -250px;
+    position: absolute;
+  }
+
+  .navigation.active {
+    left: 0;
+  }
+
+  .main.active {
+    margin-left: 0;
+  }
+}

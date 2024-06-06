@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Financiero Personal - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- =============== Navigation ================ -->
+        <!-- Menú de navegación -->
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard.html">
+                        <span class="icon">
+                            <ion-icon name="bar-chart-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="title">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html" id="logout">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Cerrar Sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <!-- Contenido principal -->
+        <div class="main">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Control Financiero Personal</h1>
+                    <span id="username">Hola: Alex</span>
+                </div>
+                <div class="card-body">
+                    <!-- Mensaje de éxito o error -->
+                    <div id="message" class="message"></div>
+                    <!-- Formulario para agregar datos financieros -->
+                    <form id="form">
+                        <div class="form-group">
+                            <label>Descripción:</label>
+                            <input type="text" name="description" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Cantidad:</label>
+                            <input type="number" name="amount" step="0.01" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Tipo:</label>
+                            <select name="type" required>
+                                <option value="income">Ingreso</option>
+                                <option value="expense">Gasto</option>
+                            </select>
+                        </div>
+                        <button type="submit">Agregar</button>
+                    </form>
+                    <!-- Tabla para mostrar datos financieros -->
+                    <table id="data-table">
+                        <thead>
+                            <tr>
+                                <th>Descripción</th>
+                                <th>Cantidad</th>
+                                <th>Tipo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Aquí se agregarán dinámicamente las filas -->
+                        </tbody>
+                    </table>
+                    <!-- Contenedor para el gráfico -->
+                    <div id="chart-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="js/session.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
